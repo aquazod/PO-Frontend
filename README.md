@@ -1,4 +1,4 @@
-# Property Listings App
+# Task Frontend
 
 A minimal, fast React application for browsing, searching, and filtering property listings. Designed to be standalone or embedded in WordPress plugins.
 
