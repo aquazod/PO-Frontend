@@ -31,12 +31,12 @@ react-app/
 
 ## Features
 
+- **Update Trigger** - Button to manually trigger property listing scraping
 - **Sortable Table** - Click headers to sort by title, location, price, or date
 - **Advanced Filtering** - Filter by price range, location, date range, and search terms
 - **Pagination** - Smart pagination showing current page context
 - **Real-time Search** - Search across titles and locations instantly
 - **Metadata Display** - Shows scraping stats, last update time, and error logs
-- **Update Trigger** - Button to manually trigger property listing scraping
 - **Responsive Design** - Works on desktop and mobile devices
 - **Zero External Dependencies** - Only React and React DOM (no CSS framework bloat)
 
