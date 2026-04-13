@@ -1,0 +1,103 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 28px 0 8px;
+  flex-wrap: wrap;
+}
+
+/* ── Base button ────────────────────────────────────────── */
+.pagination__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 6px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease,
+    color 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+  user-select: none;
+}
+
+.pagination__btn:hover:not(:disabled):not(.pagination__btn--active) {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+  color: #111827;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.pagination__btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.pagination__btn:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+  background: #f9fafb;
+}
+
+/* ── Active (current) page ──────────────────────────────── */
+.pagination__btn--active {
+  background: #0073aa;
+  border-color: #0073aa;
+  color: blue;
+  box-shadow: 0 2px 6px rgba(0, 115, 170, 0.35);
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ── Arrow buttons (‹ ›) — slightly wider tap target ───── */
+.pagination__btn--arrow {
+  font-size: 18px;
+  min-width: 36px;
+  color: #6b7280;
+}
+
+.pagination__btn--arrow:hover:not(:disabled) {
+  color: #0073aa;
+}
+
+/* ── Edge buttons (first / last page number) ────────────── */
+.pagination__btn--edge {
+  font-weight: 600;
+  color: #0073aa;
+  border-color: #bfdbfe;
+  background: #eff6ff;
+}
+
+.pagination__btn--edge:hover:not(:disabled):not(.pagination__btn--active) {
+  background: #dbeafe;
+  border-color: #93c5fd;
+}
+
+.pagination__btn--edge:disabled {
+  /* When already on first/last page, style like active */
+  background: #0073aa;
+  border-color: #0073aa;
+  color: #ffffff;
+  opacity: 1;
+}
+
+/* ── Ellipsis ───────────────────────────────────────────── */
+.pagination__ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  color: #9ca3af;
+  font-size: 15px;
+  user-select: none;
+  letter-spacing: 1px;
+}

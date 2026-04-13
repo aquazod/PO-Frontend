@@ -1,0 +1,145 @@
+/* ── Container ──────────────────────────────────────────── */
+.price-slider {
+  width: 100%;
+  max-width: 480px;
+  padding: 4px 0 0;
+}
+
+/* ── Value labels above the track ───────────────────────── */
+.price-slider__labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.price-slider__label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0073aa;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 6px;
+  padding: 3px 9px;
+  min-width: 80px;
+  text-align: center;
+}
+
+/* ── Track area ─────────────────────────────────────────── */
+.price-slider__track-wrapper {
+  position: relative;
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+
+/* Proposed Fix */
+.price-slider__track-wrapper {
+  position: relative;
+  width: 100%;           /* ADD THIS - ensure full width */
+  height: 48px;          /* INCREASE from 36px to 48px for better grab area */
+  display: flex;
+  align-items: center;
+}
+
+/* Grey background track */
+.price-slider__track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 5px;
+  border-radius: 3px;
+  background: #e5e7eb;
+  pointer-events: none;
+}
+
+/* Blue filled segment between the two thumbs */
+.price-slider__fill {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 5px;
+  border-radius: 3px;
+  background: #0073aa;
+  pointer-events: none;
+}
+
+/*
+  KEY FIX: pointer-events must be 'all' on the element.
+  The z-index (set via inline style in JSX) swaps which thumb sits on
+  top when they meet, ensuring both are always reachable and can be
+  pulled apart from either direction.
+*/
+.price-slider__input {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+/* ── Webkit thumb ─────────────────────────────────────────── */
+.price-slider__input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2.5px solid #0073aa;
+  box-shadow: 0 1px 4px rgba(0, 115, 170, 0.30);
+  cursor: grab;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.1s;
+}
+
+.price-slider__input::-webkit-slider-thumb:hover {
+  border-color: #005c8a;
+  box-shadow: 0 0 0 6px rgba(0, 115, 170, 0.15);
+  transform: scale(1.15);
+}
+
+.price-slider__input::-webkit-slider-thumb:active {
+  cursor: grabbing;
+  transform: scale(1.2);
+  box-shadow: 0 0 0 8px rgba(0, 115, 170, 0.18);
+}
+
+/* ── Firefox thumb ──────────────────────────────────────── */
+.price-slider__input::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2.5px solid #0073aa;
+  box-shadow: 0 1px 4px rgba(0, 115, 170, 0.30);
+  cursor: grab;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.price-slider__input::-moz-range-thumb:hover {
+  border-color: #005c8a;
+  box-shadow: 0 0 0 6px rgba(0, 115, 170, 0.15);
+}
+
+.price-slider__input::-moz-range-thumb:active { cursor: grabbing; }
+
+.price-slider__input::-moz-range-track { background: transparent; border: none; }
+.price-slider__input::-moz-range-progress { background: transparent; }
+
+/* ── Bound labels below (global min / max) ──────────────── */
+.price-slider__bounds {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 11px;
+  color: #9ca3af;
+}

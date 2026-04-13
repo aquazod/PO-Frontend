@@ -1,0 +1,117 @@
+.filters-panel {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+}
+
+.filters-panel__title {
+  margin: 0 0 18px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── Generic group ──────────────────────────────────────── */
+.filters-panel__group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1 1 180px;
+}
+
+.filters-panel__label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── Inline row (location + dates) ─────────────────────── */
+.filters-panel__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 18px 0;
+}
+
+/* ── Inputs and select ─────────────────────────────────── */
+.filters-panel__input,
+.filters-panel__select {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1e293b;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.filters-panel__input:focus,
+.filters-panel__select:focus {
+  border-color: #0073aa;
+  box-shadow: 0 0 0 3px rgba(0, 115, 170, 0.15);
+}
+
+/* ── Search row ─────────────────────────────────────────── */
+.filters-panel__search-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filters-panel__input--search {
+  flex: 1 1 240px;
+}
+
+/* ── Action buttons ─────────────────────────────────────── */
+.filters-panel__actions {
+  display: flex;
+  gap: 8px;
+}
+
+.filters-panel__btn {
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+  white-space: nowrap;
+}
+
+.filters-panel__btn:active {
+  transform: translateY(1px);
+}
+
+.filters-panel__btn--search {
+  background: #0073aa;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 115, 170, 0.3);
+}
+
+.filters-panel__btn--search:hover {
+  background: #005c8a;
+  box-shadow: 0 3px 8px rgba(0, 115, 170, 0.35);
+}
+
+.filters-panel__btn--reset {
+  background: #ffffff;
+  color: #6b7280;
+  border: 1px solid #d1d5db;
+}
+
+.filters-panel__btn--reset:hover {
+  background: #fef2f2;
+  color: #dc2626;
+  border-color: #fca5a5;
+}
